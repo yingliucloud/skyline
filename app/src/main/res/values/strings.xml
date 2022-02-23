@@ -21,6 +21,20 @@
     <string name="invalid_file">Invalid file</string>
     <string name="missing_title_key">Missing title key</string>
     <string name="incomplete_prod_keys">Incomplete production keys</string>
+    <!-- Main - AppDialog -->
+    <string name="updates">Updates</string>
+    <string name="dlcs">DLCs</string>
+    <string name="issues">Issues</string>
+    <string name="notes">Notes</string>
+    <string name="cheats">Cheats</string>
+    <string name="saves">Saves</string>
+    <string name="no_updates">No updates available</string>
+    <string name="no_dlcs">No DLCs available</string>
+    <string name="pin_to_homescreen">Pin to homescreen</string>
+    <string name="open_external">Open external link</string>
+    <string name="apply">Apply</string>
+    <string name="tested_on">Tested on %1$s</string>
+    <string name="not_tested">Not tested</string>
     <!-- Settings - Emulator -->
     <string name="emulator">Emulator</string>
     <string name="search_location">Search Location</string>

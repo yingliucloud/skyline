@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/game_icon"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:contentDescription="@string/icon"
+        android:focusable="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="?attr/shapeAppearanceSmallComponent"
+        tools:src="@drawable/default_icon" />
+
+    <TextView
+        android:id="@+id/game_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/game_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="The Legend of Zelda: Breath of the Wild" />
+
+    <TextView
+        android:id="@+id/game_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:textColor="@android:color/tertiary_text_light"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/game_title"
+        app:layout_constraintTop_toBottomOf="@id/game_title"
+        tools:text="Nintendo" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flex"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:visibility="invisible"
+        app:alignItems="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/game_title"
+        app:layout_constraintTop_toBottomOf="@id/game_subtitle"
+        tools:visibility="visible">
+
+        <RatingBar
+            android:id="@+id/rating_bar"
+            style="?attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:max="5"
+            android:min="0"
+            android:numStars="5"
+            android:stepSize="1"
+            tools:rating="3" />
+
+        <ImageView
+            android:id="@+id/dot_separator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:paddingHorizontal="6dp"
+            android:src="@drawable/dot_separator" />
+
+        <TextView
+            android:id="@+id/tested_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:includeFontPadding="false"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textColor="@android:color/tertiary_text_light"
+            tools:text="Tested on 1.0.0" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/game_play"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:focusedByDefault="true"
+        android:stateListAnimator="@null"
+        android:text="@string/play"
+        app:icon="@drawable/ic_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/game_pin"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/game_title"
+        app:layout_constraintTop_toBottomOf="@+id/flex"
+        app:layout_constraintWidth_max="146dp" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/game_pin"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:contentDescription="@string/pin_to_homescreen"
+        app:icon="@drawable/ic_add_home"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/game_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/game_play"
+        app:layout_constraintTop_toTopOf="@id/game_play" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
