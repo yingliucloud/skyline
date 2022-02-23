@@ -36,6 +36,7 @@ class GenericAdapter : RecyclerView.Adapter<GenericViewHolder<ViewBinding>>(), F
     val currentItems : List<GenericListItem<in ViewBinding>> get() = asyncListDiffer.currentList
 
     var currentSearchTerm = ""
+    var selectedPosition : Int? = null
 
     private val viewTypesMapping = mutableMapOf<ViewBindingFactory, Int>()
 
@@ -65,6 +66,11 @@ class GenericAdapter : RecyclerView.Adapter<GenericViewHolder<ViewBinding>>(), F
     fun setItems(items : List<GenericListItem<*>>) {
         allItems.clear()
         allItems.addAll(items)
+        filter.filter(currentSearchTerm)
+    }
+
+    fun removeItemAt(position : Int) {
+        allItems.removeAt(position)
         filter.filter(currentSearchTerm)
     }
 
