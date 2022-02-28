@@ -5,7 +5,7 @@
     <dimen name="corner_radius_large">12dp</dimen>
 
     <!-- Main - AppDialog -->
-    <dimen name="section_spacing">10dp</dimen>
+    <dimen name="section_spacing">6dp</dimen>
     <dimen name="section_title_padding">6dp</dimen>
     <dimen name="section_item_card_padding">12dp</dimen>
 </resources>

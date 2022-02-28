@@ -23,12 +23,13 @@ import emu.skyline.adapter.inflater
 import emu.skyline.data.AppItem
 import emu.skyline.databinding.AppDialogGameInfoBinding
 import emu.skyline.loader.LoaderResult
+import emu.skyline.network.TitleRating
 
 object ControllerBindingFactory : ViewBindingFactory {
     override fun createBinding(parent : ViewGroup) = AppDialogGameInfoBinding.inflate(parent.inflater(), parent, false)
 }
 
-class GameInfoViewItem(private val context : Context, private val item : AppItem, private val testedVersion : String?, private val rating : Int?) : GenericListItem<AppDialogGameInfoBinding>() {
+class GameInfoViewItem(private val context : Context, private val item : AppItem, private val testedVersion : String?, private val rating : TitleRating?) : GenericListItem<AppDialogGameInfoBinding>() {
     override fun getViewBindingFactory() = ControllerBindingFactory
 
     override fun bind(binding : AppDialogGameInfoBinding, position : Int) {
@@ -42,7 +43,7 @@ class GameInfoViewItem(private val context : Context, private val item : AppItem
         binding.gameSubtitle.isSelected = true
 
         binding.flex.visibility = if (rating == null && testedVersion == null) View.INVISIBLE else View.VISIBLE
-        binding.ratingBar.rating = (rating ?: 0).toFloat()
+        binding.ratingBar.rating = (rating ?: TitleRating.None).ordinal.toFloat()
         binding.testedVersion.text = testedVersion?.let { context.getString(R.string.tested_on, it) } ?: context.getString(R.string.not_tested)
 
         binding.gamePlay.isEnabled = item.loaderResult == LoaderResult.Success
