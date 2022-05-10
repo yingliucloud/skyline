@@ -102,6 +102,14 @@ E.g. on Windows:
 cmake.dir=C\:\\Users\\skyline\\AppData\\Local\\Android\\Sdk\\cmake\\3.18.1
 ```
 
+* `NDK not configured` even if you have followed the steps above.
+
+Put path to the NDK in `ndk.dir` property of `local.properties` file, eg.:
+
+```properties
+ndk.dir=/home/skyline/opt/android-sdk/ndk/25.0.8221429
+```
+
 * `'shader_compiler/*.h' file not found`
 
 You didn't clone the repository with symlinks enabled. Windows requires administrator privileges to create symlinks so it's likely it didn't create them.
