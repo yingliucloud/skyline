@@ -30,9 +30,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cxx-
 
-      - name: Install Ninja Build
+      - name: Ln Ninja Build
         run: |
-          sudo apt-get install -y ninja-build
           ln -s /usr/bin/ninja .
 
       - name: Install CMake & Android NDK
